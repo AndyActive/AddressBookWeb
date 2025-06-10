@@ -1,5 +1,4 @@
-import React, { useState, useEffect } from "react";
-import { useDebounce } from 'use-debounce';
+import React, {useState} from "react";
 import styles from "./styles.module.css";
 import ContactCard from "./ ContactCard.jsx";
 import ContactForm from "./ ContactForm.jsx";
@@ -21,16 +20,11 @@ const AddressBook = () => {
         saveContact,
     } = useContacts();
 
-    const [debouncedSearch] = useDebounce(search, 500);
     const [popupOpen, setPopupOpen] = useState(false);
     const [selectedContact, setSelectedContact] = useState(null);
     const [detailsPopupOpen, setDetailsPopupOpen] = useState(false);
     const [detailsTitle, setDetailsTitle] = useState("");
     const [detailsList, setDetailsList] = useState([]);
-    
-    useEffect(() => {
-        loadContacts(page, debouncedSearch);
-    }, [page, debouncedSearch, loadContacts]);
 
     const handleSearchInputChange = (e) => {
         handleSearchChange(e.target.value);
@@ -49,7 +43,7 @@ const AddressBook = () => {
     const handleSubmit = async (contactData) => {
         await saveContact(contactData, selectedContact);
         setPopupOpen(false);
-        loadContacts(page, debouncedSearch);
+        loadContacts(page);
     };
 
     const handleShowDetails = async (id, type) => {
@@ -64,14 +58,14 @@ const AddressBook = () => {
 
     const getInitialEmails = () => {
         return selectedContact
-            ? selectedContact.emails.map(e => ({ email: e.email, primary: e.primaryEmail }))
-            : [{ email: "", primary: true }];
+            ? selectedContact.emails.map(e => ({email: e.email, primary: e.primaryEmail}))
+            : [{email: "", primary: true}];
     };
 
     const getInitialPhones = () => {
         return selectedContact
-            ? selectedContact.phones.map(p => ({ number: p.number, primary: p.primaryPhone }))
-            : [{ number: "", primary: true }];
+            ? selectedContact.phones.map(p => ({number: p.number, primary: p.primaryPhone}))
+            : [{number: "", primary: true}];
     };
 
     return (
@@ -109,7 +103,7 @@ const AddressBook = () => {
                             ))
                         ) : (
                             <div className={styles.noResults}>
-                                {debouncedSearch ? "Ничего не найдено" : "Список контактов пуст"}
+                                {"Список контактов пуст"}
                             </div>
                         )}
                     </div>

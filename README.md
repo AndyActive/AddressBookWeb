@@ -1,6 +1,6 @@
 # To use the application you need:
-npm i --force 
-npm run dev
+- npm i --force 
+- npm run dev
 
 # React + Vite
 

@@ -1,0 +1,220 @@
+
+html, body, #root {
+    height: 100%;
+    margin: 0;
+    padding: 0;
+    width: 100%;
+}
+
+
+.container {
+    height: 100vh;
+    width: 100vw;
+    display: flex;
+    flex-direction: column;
+    box-sizing: border-box;
+    overflow: auto;
+
+    padding-left: 16px;
+    padding-right: 16px;
+    padding-top: 16px;
+}
+
+.header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 16px;
+}
+
+.primaryButton {
+    margin-left: 8px;
+    padding: 8px 12px;
+    background: #007bff;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+    cursor: pointer;
+}
+
+.primaryButton:disabled {
+    background-color: gray;
+    cursor: not-allowed;
+
+}
+
+.searchInput {
+    width: 100%;
+    padding: 8px 12px;
+    font-size: 1rem;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+}
+
+.contactCard {
+    width: 100%;
+    margin-bottom: 8px;
+    border: 1px solid #ddd;
+    border-radius: 6px;
+    background-color: #fff;
+    box-shadow: 0 1px 3px rgb(0 0 0 / 0.1);
+    color: #000; 
+}
+
+.cardContent {
+    display: grid;
+    grid-template-columns: repeat(6, 1fr);
+    gap: 16px;
+    align-items: center;
+    padding-top: 8px;
+    padding-bottom: 8px;
+}
+
+.colSpan1 {
+}
+
+.colSpan2Right {
+    grid-column: span 2;
+    text-align: right;
+}
+
+.iconButton {
+    background: none;
+    border: none;
+    cursor: pointer;
+    padding: 0;
+    margin-left: 4px;
+    color: #000; 
+}
+
+.iconButton:hover {
+    color: #007bff; 
+}
+
+.flexCenter {
+    display: flex;
+    align-items: center;
+}
+
+
+.buttonMarginRight {
+    margin-right: 8px;
+}
+
+.pagination {
+    display: flex;
+    justify-content: center;
+    gap: 8px;
+    margin-top: 16px;
+    align-items: center;
+}
+
+.dialogContent {
+    padding: 16px;
+}
+
+.button {
+    padding: 8px 16px;
+    font-size: 1rem;
+    border-radius: 4px;
+    cursor: pointer;
+    border: 1px solid transparent;
+    background-color: #3b82f6;
+    color: white;
+}
+
+.button.disabled {
+    padding: 8px 16px;
+    font-size: 1rem;
+    border-radius: 4px;
+    border: 1px solid transparent;
+    background-color: gray;
+    cursor: not-allowed;
+    opacity: 0.7;
+}
+
+.button:hover {
+    background-color: #2563eb;
+}
+
+.buttonDestructive {
+    background-color: #dc2626;
+    border-color: #b91c1c;
+}
+
+.buttonDestructive:hover {
+    background-color: #b91c1c;
+}
+
+.modalOverlay {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100vw;
+    height: 100vh;
+    background-color: rgba(0, 0, 0, 0.5);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    z-index: 1000;
+}
+
+.modalContent {
+    background: white;
+    border-radius: 8px;
+    padding: 24px;
+    width: 600px;
+    max-width: 90vw;
+    box-shadow: 0 8px 16px rgba(0, 0, 0, 0.25);
+    position: relative;
+    margin-bottom: 8px;
+    border: 1px solid #ddd;
+    color: #000;
+}
+
+.dialogTitle {
+    margin-top: 0;
+    margin-bottom: 16px;
+    font-size: 1.5rem;
+}
+
+.form {
+    display: flex;
+    flex-direction: column;
+    gap: 12px;
+}
+
+.input {
+    padding: 8px;
+    font-size: 1rem;
+    border-radius: 4px;
+    border: 1px solid #ccc;
+}
+
+.submitButton {
+    padding: 10px 16px;
+    font-size: 1rem;
+    background-color: #007bff;
+    color: white;
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+}
+
+.submitButton:hover {
+    background-color: #0056b3;
+}
+
+.input.error {
+    border-color: #ff4444;
+}
+
+.errorMessage {
+    color: #ff4444;
+    font-size: 12px;
+    margin-top: 1px;
+}
+
+.loading {
+    opacity: 0.6;
+    pointer-events: none;
+}
